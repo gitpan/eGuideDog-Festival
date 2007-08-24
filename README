@@ -4,6 +4,8 @@ This package provides simple way to use Festival speech synthesis system without
 
 INSTALLATION
 
+You must install festival first. Most desktop Linux has it installed default. If not, get it from http://festvox.org/festival/ or run `sudo apt-get install festival`.
+
 To install this module, run the following commands:
 
     perl Makefile.PL

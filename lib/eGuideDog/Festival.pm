@@ -1,11 +1,11 @@
 # This package is developped on the base of the package of Speech::Festival, which is written by Richard Caley
-# It is a part of eGuideDog project (http://e-guidedog.sourceforge.net)
 # I add some wrapper to make it easier to use without knowing SCHEME language
-# Author: Cameron Wong (hgn823-eguidedog@yahoo.com.cn)
+# It is a part of eGuideDog project (http://e-guidedog.sourceforge.net)
+# Author: Cameron Wong (hgn823-eguidedog002 at yahoo.com.cn)
 
 package eGuideDog::Festival;
 
-our $VERSION = '0.1';
+our $VERSION = '0.11';
 
 use strict;
 use warnings;
@@ -900,7 +900,7 @@ Version 0.1
 
 This package provides simple way to use Festival speech synthesis system without knowing Scheme language.
 
-=head1 FUNCTIONS
+=head1 METHODS
 
 =head2 new($host, $port)
 
@@ -922,19 +922,19 @@ Play wav file.
 
 Synthesize a wav file from text.
 
-=head2 stop
+=head2 stop()
 
 Stop speaking or playing. This will not affect block_speak method.
 
-=head2 close
+=head2 close()
 
 Wait until all speech finished.
 
-=head2 is_playing
+=head2 is_playing()
 
 Return 1 for playing while 0 for not playing. I just check whether /dev/dsp is being used. So it doesn't work in all cases.
 
-=head2 voice_list
+=head2 voice_list()
 
 Return an array of voice list.
 
@@ -987,13 +987,19 @@ Return the current value of voice range if $value if omited. Otherwise, set it.
 
   $festival->close(); # without this call, festival will die immediately without finishing the words.
 
+=head1 SEE ALSO
+
+L<Speech::Festival>, L<Festival::Client::Async>, L<Festival::Client>, L<Speech::Festival::Synthesiser>
+
 =head1 AUTHOR
 
-Cameron Wong, C<< <hgn823-eguidedog at yahoo.com.cn> >>, L<http://e-guidedog.sourceforge.net>
+Cameron Wong, C<< <hgn823-eguidedog002 at yahoo.com.cn> >>, L<http://e-guidedog.sourceforge.net>
 
 =head1 BUGS
 
-In some document, the symbol "'" is interpreted as Chinese symbol not the single quote. So copy and paste code may not always work. It seems a bug of some auto-generating tools. I am still wondering why.
+This module may only work on Linux/Unix operating system.
+
+In some documents, the symbol "'" is interpreted as Chinese symbol not the single quote. So copy and paste code may not always work. It seems a bug of some auto-generating tools. I am still wondering why.
 
 Please report any bugs or feature requests to
 C<bug-eguidedog-festival at rt.cpan.org>, or through the web interface at
